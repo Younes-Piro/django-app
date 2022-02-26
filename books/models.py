@@ -1,4 +1,9 @@
-from django_mongoengine import Document, EmbeddedDocument, fields
+from django.db import models
 
-class Book(EmbeddedDocument):
-    name = fields.StringField(max_length=255)
+
+class Books(models.Model):
+    title = models.CharField(max_length=100)
+    excerpt = models.TextField()
+
+    def __str__(self):
+        return self.title
