@@ -57,3 +57,14 @@ mutation bookmutation{
 	}
 }
 '''
+class BooksDeleteMutation(graphene.Mutation):
+    class Arguments:
+        id = graphene.ID()
+    
+    book = graphene.Field(BooksType)
+
+    @classmethod
+    def mutate(cls, root, info, id):
+        book = Books.objects.get(id=id)
+        book.delete()
+        return BooksDeleteMutation(book=book)

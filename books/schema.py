@@ -1,8 +1,6 @@
 import graphene
 from .models import Books
-from .mutation import BooksCreateMutation , BooksType , BooksUpdateMutation
-
-
+from .mutation import BooksCreateMutation , BooksType , BooksUpdateMutation , BooksDeleteMutation
 
 # query are useful to query the data from our database
 
@@ -22,6 +20,9 @@ class Query(graphene.ObjectType):
 class Mutation(graphene.ObjectType):
     create_book = BooksCreateMutation.Field()
     update_book = BooksUpdateMutation.Field()
+    delete_book = BooksDeleteMutation.Field()
+
+
     
 
 
