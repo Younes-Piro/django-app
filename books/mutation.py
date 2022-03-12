@@ -1,11 +1,16 @@
 import graphene
-from .models import Books
+from .models import Books, Accessory
 from graphene_django import DjangoListField, DjangoObjectType
 
 
 class BooksType(DjangoObjectType): #serialisation the data from our model to graphql
     class Meta:
         model = Books
+        fields = "__all__"
+
+class AccessoryType(DjangoObjectType):
+    class Meta:
+        model = Accessory
         fields = "__all__"
 
 class BooksCreateMutation(graphene.Mutation): #creating a schema for mutation
