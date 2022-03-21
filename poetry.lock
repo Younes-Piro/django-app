@@ -77,6 +77,18 @@ argon2 = ["argon2-cffi (>=19.1.0)"]
 bcrypt = ["bcrypt"]
 
 [[package]]
+name = "django-elasticsearch-dsl"
+version = "7.2.1"
+description = "Wrapper around elasticsearch-dsl-py for django models"
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+elasticsearch-dsl = ">=7.2.0"
+six = "*"
+
+[[package]]
 name = "django-mongoengine"
 version = "0.4.6"
 description = "Django support for MongoDB via MongoEngine"
@@ -120,6 +132,40 @@ doh = ["h2 (>=4.1.0)", "httpx (>=0.21.1)", "requests (>=2.23.0,<3.0.0)", "reques
 idna = ["idna (>=2.1,<4.0)"]
 trio = ["trio (>=0.14,<0.20)"]
 wmi = ["wmi (>=1.5.1,<2.0.0)"]
+
+[[package]]
+name = "elasticsearch"
+version = "7.17.1"
+description = "Python client for Elasticsearch"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, <4"
+
+[package.dependencies]
+certifi = "*"
+urllib3 = ">=1.21.1,<2"
+
+[package.extras]
+async = ["aiohttp (>=3,<4)"]
+develop = ["requests (>=2.0.0,<3.0.0)", "coverage", "mock", "pyyaml", "pytest", "pytest-cov", "sphinx (<1.7)", "sphinx-rtd-theme", "black", "jinja2"]
+docs = ["sphinx (<1.7)", "sphinx-rtd-theme"]
+requests = ["requests (>=2.4.0,<3.0.0)"]
+
+[[package]]
+name = "elasticsearch-dsl"
+version = "7.4.0"
+description = "Python client for Elasticsearch"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[package.dependencies]
+elasticsearch = ">=7.0.0,<8.0.0"
+python-dateutil = "*"
+six = "*"
+
+[package.extras]
+develop = ["mock", "pytest (>=3.0.0)", "pytest-cov", "pytest-mock (<3.0.0)", "pytz", "coverage (<5.0.0)", "sphinx", "sphinx-rtd-theme"]
 
 [[package]]
 name = "graphene"
@@ -375,7 +421,7 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "96d7386c05ebfe689a643f5844574d4c13adcf384d9f480b5ba040c47d892a35"
+content-hash = "44a803e101526506299928de4b383b6ccc27d5a2c5b64cac40149e4ed9c0bd23"
 
 [metadata.files]
 aniso8601 = [
@@ -406,6 +452,10 @@ django = [
     {file = "Django-3.2.12-py3-none-any.whl", hash = "sha256:9b06c289f9ba3a8abea16c9c9505f25107809fb933676f6c891ded270039d965"},
     {file = "Django-3.2.12.tar.gz", hash = "sha256:9772e6935703e59e993960832d66a614cf0233a1c5123bc6224ecc6ad69e41e2"},
 ]
+django-elasticsearch-dsl = [
+    {file = "django-elasticsearch-dsl-7.2.1.tar.gz", hash = "sha256:265812e22538899333ebb8622c2b9d053eb4e1e44b24c09730da67c90103a6b3"},
+    {file = "django_elasticsearch_dsl-7.2.1-py2.py3-none-any.whl", hash = "sha256:6a0f96681c033fa04c0a103fab600561f2dd44e7d3b0075723cd05ffc21b716d"},
+]
 django-mongoengine = [
     {file = "django-mongoengine-0.4.6.tar.gz", hash = "sha256:b9b17925c688ba1140cb4f0a04263f5cfbcc6d4a9c44552b6115d3c7ba956e9a"},
 ]
@@ -415,6 +465,14 @@ djongo = [
 dnspython = [
     {file = "dnspython-2.2.0-py3-none-any.whl", hash = "sha256:081649da27ced5e75709a1ee542136eaba9842a0fe4c03da4fb0a3d3ed1f3c44"},
     {file = "dnspython-2.2.0.tar.gz", hash = "sha256:e79351e032d0b606b98d38a4b0e6e2275b31a5b85c873e587cc11b73aca026d6"},
+]
+elasticsearch = [
+    {file = "elasticsearch-7.17.1-py2.py3-none-any.whl", hash = "sha256:8c79fe145f23826df144d1adc406a131e5cf3f41f302869fb5a1263b381e5ee2"},
+    {file = "elasticsearch-7.17.1.tar.gz", hash = "sha256:0061c49c3d4202802c09fba6734e48699a47cfeb737747acecc932ea73b7d318"},
+]
+elasticsearch-dsl = [
+    {file = "elasticsearch-dsl-7.4.0.tar.gz", hash = "sha256:c4a7b93882918a413b63bed54018a1685d7410ffd8facbc860ee7fd57f214a6d"},
+    {file = "elasticsearch_dsl-7.4.0-py2.py3-none-any.whl", hash = "sha256:046ea10820b94c075081b528b4526c5bc776bda4226d702f269a5f203232064b"},
 ]
 graphene = [
     {file = "graphene-2.1.9-py2.py3-none-any.whl", hash = "sha256:3d446eb1237c551052bc31155cf1a3a607053e4f58c9172b83a1b597beaa0868"},
