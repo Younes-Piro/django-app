@@ -26,9 +26,5 @@ class Mutation(graphene.ObjectType):
     delete_book = BooksDeleteMutation.Field()
 
 
-    
-
-
-
 # importing the schema
 schema = graphene.Schema(query=Query , mutation=Mutation)

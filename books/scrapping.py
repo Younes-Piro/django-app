@@ -31,7 +31,7 @@ def scrap(*args):
                 titles.append(title)
                 all_reviews.append(review)
                 total_reviews.append(total_review)
-                accessory = Accessory(titles=title, prices=price, all_reviews=review, total_reviews=total_review)
+                accessory = Accessory(title=title, price=price, all_review=review, total_review=total_review)
                 accessory.save()
 
 
